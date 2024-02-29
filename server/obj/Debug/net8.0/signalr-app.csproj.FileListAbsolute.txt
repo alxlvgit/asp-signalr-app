@@ -216,3 +216,5 @@
 /Users/oleksandrlevchuk/Desktop/signalr-app/server/obj/Debug/net8.0/signalr-app.pdb
 /Users/oleksandrlevchuk/Desktop/signalr-app/server/obj/Debug/net8.0/signalr-app.genruntimeconfig.cache
 /Users/oleksandrlevchuk/Desktop/signalr-app/server/obj/Debug/net8.0/ref/signalr-app.dll
+/Users/oleksandrlevchuk/Desktop/signalr-app/server/bin/Debug/net8.0/signalr-app.staticwebassets.runtime.json
+/Users/oleksandrlevchuk/Desktop/signalr-app/server/obj/Debug/net8.0/signalr-app.sourcelink.json

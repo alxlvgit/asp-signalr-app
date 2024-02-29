@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("signalr-app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12744ac912a23229708966429dd7b127b5585782")]
 [assembly: System.Reflection.AssemblyProductAttribute("signalr-app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("signalr-app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

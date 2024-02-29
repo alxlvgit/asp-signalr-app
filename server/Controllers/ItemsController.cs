@@ -56,5 +56,41 @@ public class ItemsController  : ControllerBase
         }
         return NotFound("Item not found");
     }
+
+
+
+
+[HttpPost("{id}/order")]
+public async Task<IActionResult> PlaceOrder(int id, [FromBody] PlaceOrderRequest request)
+{
+    var username = request.Username;
+    if (string.IsNullOrEmpty(username))
+    {
+        return BadRequest("Username is required");
+    }
+    var item = _context.Items.Find(id);
+    if (item == null)
+    {
+        return NotFound("Item not found");
+    }
+    
+    // Notify the user who created the item
+    await _hubContext.Clients.Group(item.UserId.ToString()).SendAsync("OrderPlaced", new
+    {
+        id, username
+    });
+    return Ok(
+        new
+        {
+            Message = "Order has been placed",
+            ItemId = id
+        }
+    );
 }
 
+}
+
+   public class PlaceOrderRequest
+{
+    public string Username { get; set; }
+}

@@ -6,13 +6,19 @@ namespace SignalrApp.Hubs
   {
     public override Task OnConnectedAsync()
     {
-      Console.WriteLine("A Client Connected: " + Context.ConnectionId);
+   
+      var userId = Context.GetHttpContext().Request.Query["userId"];
+      Console.WriteLine("A Client Connected: " + Context.ConnectionId + " with userId: " + userId);
+      Groups.AddToGroupAsync(Context.ConnectionId, userId);
       return base.OnConnectedAsync();
+       
     }
 
     public override Task OnDisconnectedAsync(Exception exception)
     {
-      Console.WriteLine("A client disconnected: " + Context.ConnectionId);
+      var userId = Context.GetHttpContext().Request.Query["userId"];
+      Console.WriteLine("A Client Disconnected: " + Context.ConnectionId + " with userId: " + userId);
+      Groups.RemoveFromGroupAsync(Context.ConnectionId, userId);
       return base.OnDisconnectedAsync(exception);
     }
   }

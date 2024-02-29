@@ -28,6 +28,7 @@ const AddItemDialog = () => {
     const formData = new FormData(event.currentTarget);
     const formJson = Object.fromEntries((formData as FormData).entries());
     const { name, price, description } = formJson;
+    if (!user) return;
     const item = {
       userId: user.id,
       name,
@@ -58,7 +59,7 @@ const AddItemDialog = () => {
           onSubmit: handleSubmit,
         }}
       >
-        <DialogTitle>Add New Item</DialogTitle>
+        <DialogTitle>Add New Item To Sell</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Enter the details of the new item

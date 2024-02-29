@@ -1,11 +1,77 @@
 {
   "Version": 1,
-  "Hash": "KzLkIEV8ffkBZvnWoc94hsc81cPpogsDBCY/6xk3Yjk=",
+  "Hash": "1Yg9PigJMvE14l4TNxN/QehhSzGH9jTS9CewVkccWl0=",
   "Source": "signalr-app",
   "BasePath": "_content/signalr-app",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "signalr-app/wwwroot",
+      "Source": "signalr-app",
+      "ContentRoot": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/",
+      "BasePath": "_content/signalr-app",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-C8-eNQUm.js",
+      "SourceId": "signalr-app",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/",
+      "BasePath": "_content/signalr-app",
+      "RelativePath": "assets/index-C8-eNQUm.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/index-C8-eNQUm.js"
+    },
+    {
+      "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-CCI2aZzz.css",
+      "SourceId": "signalr-app",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/",
+      "BasePath": "_content/signalr-app",
+      "RelativePath": "assets/index-CCI2aZzz.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/index-CCI2aZzz.css"
+    },
+    {
+      "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/index.html",
+      "SourceId": "signalr-app",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/",
+      "BasePath": "_content/signalr-app",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ]
 }

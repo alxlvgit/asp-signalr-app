@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 interface Item {
   id: number;
   userId: number;
@@ -7,10 +9,32 @@ interface Item {
   createdAt: string;
 }
 
-const Item = ({ item, userId }: { item: Item; userId: number }) => {
+const Item = ({
+  item,
+  userId,
+  username,
+}: {
+  item: Item;
+  userId: number;
+  username: string;
+}) => {
   const placeOrder = async () => {
-    alert("Order Placed. All users notified.");
-    console.log("Order Placed");
+    try {
+      const placeOrder = await fetch(`/api/items/${item.id}/order`, {
+        method: "POST",
+        body: JSON.stringify({ Username: username }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!placeOrder.ok) {
+        throw new Error("Order failed");
+      }
+      toast.success("Order placed successfully!");
+    } catch (error) {
+      console.error("Order failed:", error);
+      toast.error("Order failed! Please try again.");
+    }
   };
 
   const handleDelete = async () => {

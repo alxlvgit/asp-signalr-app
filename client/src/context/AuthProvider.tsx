@@ -19,29 +19,25 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [cookies]);
 
   const login = async (userCredentials: User) => {
-    try {
-      const tryLogin = await fetch("/api/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userCredentials),
-      });
-      if (!tryLogin.ok) {
-        throw new Error("Login failed");
-      }
-      const loggedInUser = await tryLogin.json();
-      setUser(loggedInUser);
-      const expirationTime = new Date();
-      expirationTime.setTime(expirationTime.getTime() + 3600 * 1000); // 1 hour
-      setCookie(USER_KEY, loggedInUser, {
-        path: "/",
-        expires: expirationTime,
-      });
-      setAuthenticated(true);
-    } catch (error) {
-      console.error("Login failed:", error);
+    const tryLogin = await fetch("/api/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userCredentials),
+    });
+    if (!tryLogin.ok) {
+      throw new Error("Login failed");
     }
+    const loggedInUser = await tryLogin.json();
+    setUser(loggedInUser);
+    const expirationTime = new Date();
+    expirationTime.setTime(expirationTime.getTime() + 3600 * 1000); // 1 hour
+    setCookie(USER_KEY, loggedInUser, {
+      path: "/",
+      expires: expirationTime,
+    });
+    setAuthenticated(true);
   };
 
   const logout = () => {
