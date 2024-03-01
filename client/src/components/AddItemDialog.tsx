@@ -49,7 +49,7 @@ const AddItemDialog = () => {
   return (
     <React.Fragment>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Add New Item
+        Add Item
       </Button>
       <Dialog
         open={open}
@@ -62,7 +62,7 @@ const AddItemDialog = () => {
         <DialogTitle>Add New Item To Sell</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Enter the details of the new item
+            Enter the details of the item you want to sell.
           </DialogContentText>
           <TextField
             autoFocus

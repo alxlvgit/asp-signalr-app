@@ -29,22 +29,17 @@ export default function Items() {
     }
 
     connection.on("ItemCreated", (item) => {
-      console.log("ItemCreated", item);
       setItems((prevItems) => [item, ...prevItems]);
     });
 
     connection.on("ItemDeleted", (itemId) => {
-      console.log("ItemDeleted", itemId);
       setItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
     });
 
     connection.on("OrderPlaced", (details) => {
-      console.log("OrderPlaced", details);
-      const { username, id } = details;
+      const { buyer, id } = details;
       const itemName = items.find((item) => item.id === id)?.name;
-      toast.success(
-        `Order placed by user ${username} for your item ${itemName}`
-      );
+      toast.success(`Order placed by user ${buyer} for your item ${itemName}`);
       // TODO: Update the item to show it's sold. For future improvement.
       // setItems((prevItems) =>
       //   prevItems.map((item) => {
@@ -74,12 +69,7 @@ export default function Items() {
           <div className="animate-spin col-span-full rounded-full h-16 w-16 mx-auto border-t-2 border-b-2 border-gray-900"></div>
         ) : (
           items.map((item) => (
-            <Item
-              key={item.id}
-              item={item}
-              userId={user!.id!}
-              username={user!.name}
-            />
+            <Item key={item.id} item={item} creator={item.user!} />
           ))
         )}
       </div>

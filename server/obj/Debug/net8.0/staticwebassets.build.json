@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1Yg9PigJMvE14l4TNxN/QehhSzGH9jTS9CewVkccWl0=",
+  "Hash": "PGoDKOQBBgHe59wtj7HSNILXfTsxbYxMx8MYTYqIbtY=",
   "Source": "signalr-app",
   "BasePath": "_content/signalr-app",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-C8-eNQUm.js",
+      "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-B8WnL7Mo.css",
       "SourceId": "signalr-app",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/",
       "BasePath": "_content/signalr-app",
-      "RelativePath": "assets/index-C8-eNQUm.js",
+      "RelativePath": "assets/index-B8WnL7Mo.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/index-C8-eNQUm.js"
+      "OriginalItemSpec": "wwwroot/assets/index-B8WnL7Mo.css"
     },
     {
-      "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-CCI2aZzz.css",
+      "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-DxOa70SX.js",
       "SourceId": "signalr-app",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/",
       "BasePath": "_content/signalr-app",
-      "RelativePath": "assets/index-CCI2aZzz.css",
+      "RelativePath": "assets/index-DxOa70SX.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,7 +52,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/assets/index-CCI2aZzz.css"
+      "OriginalItemSpec": "wwwroot/assets/index-DxOa70SX.js"
     },
     {
       "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/index.html",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/placeholder.jpg",
+      "SourceId": "signalr-app",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/",
+      "BasePath": "_content/signalr-app",
+      "RelativePath": "placeholder.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/placeholder.jpg"
     }
   ]
 }

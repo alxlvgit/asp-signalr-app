@@ -23,15 +23,38 @@ public class ItemsController  : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Item> Get()
+    public IEnumerable<ItemWithUser> Get()
     {
-        return _context.Items.ToList();
+  
+        var items = _context.Items.Join(
+            _context.Users,
+            item => item.UserId,
+            user => user.Id,
+            (item, user) => new ItemWithUser
+            {
+                Id = item.Id,
+                Name = item.Name,
+                Description = item.Description,
+                Price = item.Price,
+                User = user
+            }
+        );
+        return items;
     }
 
     [HttpGet("{id}")]
-    public Item Get(int id)
+    public ItemWithUser Get(int id)
     {
-        return _context.Items.Find(id);
+        var item = _context.Items.Find(id);
+        var user = _context.Users.Find(item.UserId);
+        return new ItemWithUser
+        {
+            Id = item.Id,
+            Name = item.Name,
+            Description = item.Description,
+            Price = item.Price,
+            User = user
+        };
     }
 
     [HttpPost]
@@ -39,8 +62,16 @@ public class ItemsController  : ControllerBase
     {
         _context.Items.Add(Item);
         _context.SaveChanges();
-        await _hubContext.Clients.All.SendAsync("ItemCreated", Item);
-        return Ok(Item);
+        var user = _context.Users.Find(Item.UserId);
+        await _hubContext.Clients.All.SendAsync("ItemCreated", new ItemWithUser
+        {
+            Id = Item.Id,
+            Name = Item.Name,
+            Description = Item.Description,
+            Price = Item.Price,
+            User = user
+        });
+        return Ok();
     }
 
     [HttpDelete("{id}")]
@@ -52,7 +83,7 @@ public class ItemsController  : ControllerBase
             _context.Items.Remove(Item);
             _context.SaveChanges();
             await _hubContext.Clients.All.SendAsync("ItemDeleted", Item.Id);
-            return Ok(Item);
+            return Ok();
         }
         return NotFound("Item not found");
     }
@@ -63,8 +94,8 @@ public class ItemsController  : ControllerBase
 [HttpPost("{id}/order")]
 public async Task<IActionResult> PlaceOrder(int id, [FromBody] PlaceOrderRequest request)
 {
-    var username = request.Username;
-    if (string.IsNullOrEmpty(username))
+    var buyer = request.Username;
+    if (string.IsNullOrEmpty(buyer))
     {
         return BadRequest("Username is required");
     }
@@ -77,7 +108,7 @@ public async Task<IActionResult> PlaceOrder(int id, [FromBody] PlaceOrderRequest
     // Notify the user who created the item
     await _hubContext.Clients.Group(item.UserId.ToString()).SendAsync("OrderPlaced", new
     {
-        id, username
+        id, buyer
     });
     return Ok(
         new
@@ -93,4 +124,13 @@ public async Task<IActionResult> PlaceOrder(int id, [FromBody] PlaceOrderRequest
    public class PlaceOrderRequest
 {
     public string Username { get; set; }
+}
+
+
+public class ItemWithUser{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public decimal Price { get; set; }
+    public User User { get; set; }
 }

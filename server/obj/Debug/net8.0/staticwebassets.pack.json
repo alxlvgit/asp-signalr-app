@@ -1,16 +1,20 @@
 {
   "Files": [
     {
-      "Id": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-C8-eNQUm.js",
-      "PackagePath": "staticwebassets/assets/index-C8-eNQUm.js"
+      "Id": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-B8WnL7Mo.css",
+      "PackagePath": "staticwebassets/assets/index-B8WnL7Mo.css"
     },
     {
-      "Id": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-CCI2aZzz.css",
-      "PackagePath": "staticwebassets/assets/index-CCI2aZzz.css"
+      "Id": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/assets/index-DxOa70SX.js",
+      "PackagePath": "staticwebassets/assets/index-DxOa70SX.js"
     },
     {
       "Id": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/oleksandrlevchuk/Desktop/signalr-app/server/wwwroot/placeholder.jpg",
+      "PackagePath": "staticwebassets/placeholder.jpg"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.signalr-app.props",
